@@ -437,6 +437,62 @@
       }
     }
 
+    /* LINKEDIN */
+.linkedin-section {
+  padding: 7rem 4rem;
+  border-top: 1px solid var(--border);
+}
+
+.linkedin-card {
+  max-width: 700px;
+}
+
+.linkedin-heading {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 400;
+  margin-bottom: 1.5rem;
+}
+
+.linkedin-text {
+  font-size: 0.95rem;
+  line-height: 1.9;
+  color: #555;
+  margin-bottom: 2rem;
+  max-width: 520px;
+}
+
+.linkedin-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+
+  padding: 0.9rem 1.6rem;
+
+  border: 1px solid var(--text);
+
+  text-decoration: none;
+  color: var(--text);
+
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+
+  transition: background 0.2s, color 0.2s, gap 0.2s;
+}
+
+.linkedin-btn:hover {
+  background: var(--text);
+  color: var(--bg);
+  gap: 1rem;
+}
+
+@media (max-width: 768px) {
+  .linkedin-section {
+    padding: 5rem 1.5rem;
+  }
+}
+
     /* RESPONSIVE */
     @media (max-width: 768px) {
       nav {
@@ -478,14 +534,11 @@
 <body>
 
   <!-- NAV -->
-  <nav>
-    <a href="#" class="nav-name">Abrar Jahin</a>
-
-    <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#photos">Photos</a></li>
-    </ul>
-  </nav>
+ <ul class="nav-links">
+  <li><a href="#about">About</a></li>
+  <li><a href="#linkedin">LinkedIn</a></li>
+  <li><a href="#photos">Photos</a></li>
+</ul>
 
   <!-- HERO -->
   <section class="hero">
@@ -543,6 +596,35 @@
     </div>
 
   </section>
+
+  <!-- LINKEDIN -->
+<section class="linkedin-section" id="linkedin">
+
+  <div class="linkedin-card">
+
+    <p class="section-label">Professional</p>
+
+    <h2 class="linkedin-heading">
+      Connect With Me
+    </h2>
+
+    <p class="linkedin-text">
+      Explore my LinkedIn profile to learn more about my academic journey,
+      research interests, professional experience, and ongoing projects.
+    </p>
+
+    <a
+      href="https://www.linkedin.com/in/abrar-jahin-462520408/"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="linkedin-btn"
+    >
+      Visit My LinkedIn →
+    </a>
+
+  </div>
+
+</section>
 
   <!-- PHOTOS -->
   <section class="photos" id="photos">
