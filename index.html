@@ -8,7 +8,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
 
   <style>
-    *, *::before, *::after {
+    *,
+    *::before,
+    *::after {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
@@ -147,7 +149,12 @@
       transform: translateY(-50%);
       width: 1px;
       height: 180px;
-      background: linear-gradient(to bottom, transparent, var(--accent), transparent);
+      background: linear-gradient(
+        to bottom,
+        transparent,
+        var(--accent),
+        transparent
+      );
       animation: fadeIn 1.2s 0.4s ease both;
     }
 
@@ -170,7 +177,9 @@
       margin-bottom: 1.2rem;
     }
 
-    .about-heading {
+    .about-heading,
+    .photos-heading,
+    .linkedin-heading {
       font-family: 'Cormorant Garamond', serif;
       font-size: clamp(2rem, 4vw, 3rem);
       font-weight: 400;
@@ -178,7 +187,8 @@
       margin-bottom: 1.5rem;
     }
 
-    .about p {
+    .about p,
+    .linkedin-text {
       font-size: 0.95rem;
       line-height: 1.9;
       color: #555;
@@ -209,6 +219,43 @@
       pointer-events: none;
     }
 
+    /* LINKEDIN */
+    .linkedin-section {
+      padding: 7rem 4rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .linkedin-card {
+      max-width: 700px;
+    }
+
+    .linkedin-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+
+      padding: 0.9rem 1.6rem;
+
+      border: 1px solid var(--text);
+
+      text-decoration: none;
+      color: var(--text);
+
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+
+      transition: background 0.2s,
+                  color 0.2s,
+                  gap 0.2s;
+    }
+
+    .linkedin-btn:hover {
+      background: var(--text);
+      color: var(--bg);
+      gap: 1rem;
+    }
+
     /* PHOTOS */
     .photos {
       padding: 7rem 4rem;
@@ -222,19 +269,12 @@
       margin-bottom: 3rem;
     }
 
-    .photos-heading {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2rem, 4vw, 3rem);
-      font-weight: 400;
-    }
-
     .photo-count {
       font-size: 0.75rem;
       color: var(--muted);
       letter-spacing: 0.1em;
     }
 
-    /* Upload zone */
     .upload-zone {
       border: 2px dashed var(--border);
       border-radius: 4px;
@@ -242,7 +282,8 @@
       text-align: center;
       margin-bottom: 2.5rem;
       cursor: pointer;
-      transition: border-color 0.2s, background 0.2s;
+      transition: border-color 0.2s,
+                  background 0.2s;
     }
 
     .upload-zone:hover,
@@ -277,7 +318,8 @@
       background: transparent;
       color: var(--text);
       cursor: pointer;
-      transition: background 0.2s, color 0.2s;
+      transition: background 0.2s,
+                  color 0.2s;
       font-family: 'DM Sans', sans-serif;
     }
 
@@ -286,10 +328,12 @@
       color: var(--bg);
     }
 
-    /* Photo grid */
     .photo-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      grid-template-columns: repeat(
+        auto-fill,
+        minmax(280px, 1fr)
+      );
       gap: 1.2rem;
     }
 
@@ -307,7 +351,8 @@
       height: 100%;
       object-fit: cover;
       display: block;
-      transition: transform 0.5s ease, filter 0.3s;
+      transition: transform 0.5s ease,
+                  filter 0.3s;
     }
 
     .photo-item:hover img {
@@ -329,7 +374,6 @@
 
       color: white;
       font-size: 1rem;
-      line-height: 1;
 
       cursor: pointer;
 
@@ -437,64 +481,9 @@
       }
     }
 
-    /* LINKEDIN */
-.linkedin-section {
-  padding: 7rem 4rem;
-  border-top: 1px solid var(--border);
-}
-
-.linkedin-card {
-  max-width: 700px;
-}
-
-.linkedin-heading {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(2rem, 4vw, 3rem);
-  font-weight: 400;
-  margin-bottom: 1.5rem;
-}
-
-.linkedin-text {
-  font-size: 0.95rem;
-  line-height: 1.9;
-  color: #555;
-  margin-bottom: 2rem;
-  max-width: 520px;
-}
-
-.linkedin-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.6rem;
-
-  padding: 0.9rem 1.6rem;
-
-  border: 1px solid var(--text);
-
-  text-decoration: none;
-  color: var(--text);
-
-  font-size: 0.75rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-
-  transition: background 0.2s, color 0.2s, gap 0.2s;
-}
-
-.linkedin-btn:hover {
-  background: var(--text);
-  color: var(--bg);
-  gap: 1rem;
-}
-
-@media (max-width: 768px) {
-  .linkedin-section {
-    padding: 5rem 1.5rem;
-  }
-}
-
     /* RESPONSIVE */
     @media (max-width: 768px) {
+
       nav {
         padding: 1.2rem 1.5rem;
       }
@@ -517,6 +506,10 @@
         padding: 5rem 1.5rem;
       }
 
+      .linkedin-section {
+        padding: 5rem 1.5rem;
+      }
+
       .photos {
         padding: 5rem 1.5rem;
       }
@@ -534,16 +527,28 @@
 <body>
 
   <!-- NAV -->
- <ul class="nav-links">
-  <li><a href="#about">About</a></li>
-  <li><a href="#linkedin">LinkedIn</a></li>
-  <li><a href="#photos">Photos</a></li>
-</ul>
+  <nav>
+
+    <a href="#" class="nav-name">
+      Abrar Jahin
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#linkedin">LinkedIn</a></li>
+      <li><a href="#photos">Photos</a></li>
+    </ul>
+
+  </nav>
 
   <!-- HERO -->
   <section class="hero">
+
     <div class="hero-content">
-      <p class="hero-tag">Welcome to my space</p>
+
+      <p class="hero-tag">
+        Welcome to my space
+      </p>
 
       <h1>
         Abrar<br>
@@ -551,23 +556,29 @@
       </h1>
 
       <p class="hero-desc">
-        A personal corner of the internet — a place to share who I am,
+        A personal corner of the internet —
+        a place to share who I am,
         what I love, and moments I want to keep.
       </p>
 
       <a href="#about" class="hero-cta">
         Learn more →
       </a>
+
     </div>
 
     <div class="hero-line"></div>
+
   </section>
 
   <!-- ABOUT -->
   <section class="about" id="about">
 
     <div class="about-text">
-      <p class="section-label">About me</p>
+
+      <p class="section-label">
+        About me
+      </p>
 
       <h2 class="about-heading">
         Hello, I'm<br>
@@ -575,17 +586,20 @@
       </h2>
 
       <p>
-        Welcome! This is my personal website where I share a little about myself
-        and the moments I treasure. I believe in the beauty of simplicity and
-        the power of genuine connections.
+        Welcome! This is my personal website
+        where I share a little about myself
+        and the moments I treasure.
       </p>
 
       <p>
-        Feel free to browse through my photos and get to know me a little better.
+        I believe in the beauty of simplicity
+        and the power of genuine connections.
       </p>
+
     </div>
 
     <div class="profile-wrap">
+
       <img
         src="docs/assets/Profilepicture.jpeg"
         alt="Abrar Jahin"
@@ -593,49 +607,57 @@
       >
 
       <div class="profile-corner"></div>
+
     </div>
 
   </section>
 
   <!-- LINKEDIN -->
-<section class="linkedin-section" id="linkedin">
+  <section class="linkedin-section" id="linkedin">
 
-  <div class="linkedin-card">
+    <div class="linkedin-card">
 
-    <p class="section-label">Professional</p>
+      <p class="section-label">
+        Professional
+      </p>
 
-    <h2 class="linkedin-heading">
-      Connect With Me
-    </h2>
+      <h2 class="linkedin-heading">
+        Connect With Me
+      </h2>
 
-    <p class="linkedin-text">
-      Explore my LinkedIn profile to learn more about my academic journey,
-      research interests, professional experience, and ongoing projects.
-    </p>
+      <p class="linkedin-text">
+        Explore my LinkedIn profile to learn more
+        about my academic journey, research interests,
+        professional experience, and ongoing projects.
+      </p>
 
-    <a
-      href="https://www.linkedin.com/in/abrar-jahin-462520408/"
-      target="_blank"
-      rel="noopener noreferrer"
-      class="linkedin-btn"
-    >
-      Visit My LinkedIn →
-    </a>
+      <a
+        href="https://www.linkedin.com/in/abrar-jahin-462520408/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="linkedin-btn"
+      >
+        Visit My LinkedIn →
+      </a>
 
-  </div>
+    </div>
 
-</section>
+  </section>
 
   <!-- PHOTOS -->
   <section class="photos" id="photos">
 
     <div class="photos-header">
+
       <div>
         <p class="section-label">Gallery</p>
         <h2 class="photos-heading">My Photos</h2>
       </div>
 
-      <span class="photo-count" id="photoCount">0 photos</span>
+      <span class="photo-count" id="photoCount">
+        0 photos
+      </span>
+
     </div>
 
     <div
@@ -645,12 +667,29 @@
     >
 
       <div class="upload-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5V19a1 1 0 001 1h16a1 1 0 001-1v-2.5M12 3v12m0-12l-3.5 3.5M12 3l3.5 3.5"/>
+
+        <svg xmlns="http://www.w3.org/2000/svg"
+             width="36"
+             height="36"
+             fill="none"
+             viewBox="0 0 24 24"
+             stroke="currentColor"
+             stroke-width="1">
+
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M3 16.5V19a1 1 0 001 1h16a1 1 0 001-1v-2.5M12 3v12m0-12l-3.5 3.5M12 3l3.5 3.5"
+          />
+
         </svg>
+
       </div>
 
-      <p>Drag &amp; drop photos here, or click to browse</p>
+      <p>
+        Drag &amp; drop photos here,
+        or click to browse
+      </p>
 
       <p style="font-size:0.75rem; margin-top:0.3rem;">
         JPG, PNG, WEBP supported
@@ -671,6 +710,7 @@
         multiple
         onchange="handlePhotos(event)"
       >
+
     </div>
 
     <div class="photo-grid" id="photoGrid"></div>
@@ -678,9 +718,16 @@
   </section>
 
   <!-- LIGHTBOX -->
-  <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <div
+    class="lightbox"
+    id="lightbox"
+    onclick="closeLightbox()"
+  >
 
-    <button class="lightbox-close" onclick="closeLightbox()">
+    <button
+      class="lightbox-close"
+      onclick="closeLightbox()"
+    >
       &times;
     </button>
 
@@ -690,11 +737,17 @@
 
   <!-- FOOTER -->
   <footer>
-    <span class="footer-name">Abrar Jahin</span>
+
+    <span class="footer-name">
+      Abrar Jahin
+    </span>
 
     <p>
-      &copy; <span id="year"></span> · All rights reserved
+      &copy;
+      <span id="year"></span>
+      · All rights reserved
     </p>
+
   </footer>
 
   <script>
@@ -755,9 +808,11 @@
 
     function renderGrid() {
 
-      const grid = document.getElementById('photoGrid');
+      const grid =
+        document.getElementById('photoGrid');
 
-      document.getElementById('photoCount').textContent =
+      document.getElementById('photoCount')
+        .textContent =
         `${photos.length} photo${photos.length !== 1 ? 's' : ''}`;
 
       grid.innerHTML = '';
@@ -785,6 +840,7 @@
         `;
 
         grid.appendChild(item);
+
       });
     }
 
@@ -793,13 +849,15 @@
 
       document.getElementById('lightboxImg').src = src;
 
-      document.getElementById('lightbox')
+      document
+        .getElementById('lightbox')
         .classList.add('open');
     }
 
     function closeLightbox() {
 
-      document.getElementById('lightbox')
+      document
+        .getElementById('lightbox')
         .classList.remove('open');
     }
 
